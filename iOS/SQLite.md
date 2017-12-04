@@ -27,6 +27,76 @@ age integer
 );
 
 /*
+
+/**
+* 公募使用钰金宝购买或赎回到钰金宝
+* @param fundCustNo: 客户编号
+* @param applicationamount 申请金额
+* @param buyflag 强制购买标志，'0' 非强制购买，'1' 强 制购买
+* @param fundcode 基金代码
+* @param targetfundcode 目标基金代码
+* @param tpasswd 交易密码 base64加密
+* @param transactionaccountid 交易账号
+* @param vastredeemflag 巨额赎回标志，0-放弃超额部分 1-继续 赎回
+* @return Map： 结果
+*/
+@RequestMapping(value = "/transformationFundYJB")
+public Map transformationFundYJB (String applicationamount, String buyflag, String fundCustNo, String fundcode,
+String targetfundcode, String tpasswd, String transactionaccountid, String vastredeemflag){
+String targetsharetype = "";
+String tano = "";
+String branchcode = "353";
+Map<String, Object> map = new HashMap<String, Object>();
+
+tpasswd = Base64Util.getFromBase64(tpasswd);//页面用了base64加密，此处base64解密为明文
+tpasswd = DESEncrypt.strEnc(tpasswd);//金证的des加密
+
+//获取tano
+Map<String,Object> tabodyMap = new HashMap<String,Object>();
+tabodyMap = InterfaceUtil.getFundTa(fundcode);
+if(!tabodyMap.isEmpty()){
+tano = tabodyMap.get("tano").toString();
+}
+
+//基金转换接口
+map.put("MethodType", Const.JR_DIRECT);
+map.put("MethodName", "fundconvert");
+//以下是私有参数
+map.put("applicationamount", applicationamount);//
+map.put("branchcode", branchcode);//
+map.put("buyflag", buyflag);//'0' 非强制购买，'1' 强制购买
+map.put("custno", fundCustNo);//客户号
+map.put("fundcode",fundcode);//
+map.put("tano", tano);//TA代码
+map.put("targetfundcode", targetfundcode);//
+map.put("targetsharetype", targetsharetype);//
+map.put("tpasswd", tpasswd);//
+map.put("transactionaccountid",transactionaccountid );//交易账户
+map.put("transactorcertno", "");//
+map.put("transactorcerttype", "");//
+map.put("transactorname", "");//
+map.put("vastredeemflag", vastredeemflag);//巨额赎回标志0-放弃超额部分1-继续赎回
+JSONObject GrpBody = InterfaceUtil.connetOpenapi(map);
+String code=(String)GrpBody.get("ReturnCode");
+String msg=(String)GrpBody.get("ReturnMsg");
+Map<String, Object> result = new HashMap<>();
+result.put("code",code);
+result.put("msg",msg);
+result.put("data","");
+if("0000".equals(code)||"0000"==code) {
+Map<String, Object> obj = new HashMap<String, Object>();
+String data = GrpBody.get("data").toString();//返回数据
+JSONArray array = JSONArray.fromObject(data);
+JSONArray arr = JSONArray.fromObject(array.get(0));
+if (arr != null && arr.size() > 0) {
+obj = StringUtil.jsonToMap(arr.get(0));//取返回结果的第一结果集
+obj.put("confirmeddate", obj.get("transactiondate").toString());
+}
+result.put("data", obj);
+}
+return result;
+}
+
 insert：向数据库某个表添加新的数据行
 INSERT INTO TABLE_NAME [(column1, column2, column3,...columnN)]
 VALUES (value1, value2, value3,...valueN);
@@ -182,3 +252,18 @@ UNION ALL ,结合连个select语句的结果，包括重复行
 -- SELECT username, age, EMP_ID from account LEFT OUTER JOIN DEPARTMENT ON account.subj = DEPARTMENT.EMP_ID;
 -- 
 
+
+SQL注入预防：
+通过正则表达式(不常用)
+参数化存储过程进行数据查询
+参数化SQL语句
+添加新框架
+
+如何防止SQL Injection。
+总的来说有以下几点：
+1.永远不要信任用户的输入，要对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和双"-"进行转换等。
+2.永远不要使用动态拼装SQL，可以使用参数化的SQL或者直接使用存储过程进行数据查询存取。
+3.永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接。
+4.不要把机密信息明文存放，请加密或者hash掉密码和敏感的信息。
+5.应用的异常信息应该给出尽可能少的提示，最好使用自定义的错误信息对原始错误信息进行包装，把异常信息存放在独立的表中。
+LINQtoSQL

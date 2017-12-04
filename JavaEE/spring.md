@@ -85,3 +85,29 @@ prototype：多例
         @Qualifier
     方式3：名称注入
         @Resource("名称“)
+
+
+sprng整合junit
+jar包导入： 4 + 1 + logging + spring-test
+
+//制定了单元测试的执行类，
+@RunWith(SpringUnit4ClassRunner.class)
+@ContextConfiguration：指定Spring配置文件所在的路径，可以同时指定多个文件。
+@ContextConfiguration(locations = {"classpath:spring.xml","classpath:spring2.xml"})
+@TestExecutionListenners 这个用于指定在测试类执行之前，可以做的一些动作 ，
+@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class, TransactionalTestExecutionListener.class })
+@Transactional
+@Transactional：这里的@Transactional不是必须的，这里是和@TestExecutionListeners中的TransactionalTestExecutionListener.class配合使用，用于保证插入的数据库中的测试数据，在测试完后，事务回滚，将插入的数据给删除掉，保证数据库的干净。如果没有显示的指定@Transactional，那么插入到数据库中的数据就是真实的插入了
+RunWith改变了JUnit的默认执行类(Suite)，继承了org.junit.runners.BlockJUnit4ClassRunner的单元测试执行类 springJUnit4ClassRunner既是子类
+
+4整合web
+导入jar包：
+1.tomcat启动加载配置文件
+servlet  - init(ServiceConfig) -> <load-on-startup>
+filter -> init(FilterConfig) -> web.xml注册过滤器自动调用初始化
+listener ->ServletContextListenner ->servletContext对象监听
+
+spring 提供监听器 ContextLoaderListener ->web.xml <listenner>
+<listener>
+    <
+</Listener>
