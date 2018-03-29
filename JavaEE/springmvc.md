@@ -62,7 +62,7 @@ spring ：IOC，创建对象交给spring
 1、 value， method；
 value：     指定请求的实际地址，指定的地址可以是URI Template 模式（后面将会说明）；
 method：  指定请求的method类型， GET、POST、PUT、DELETE等；
-2、consumes，produces
+2、consumes，produces (GET:默认按照application/form-data)（POST:form-data,x-www-form-urlencoded,raw,binary，指定其中的一个，）
 consumes： 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;
 produces:    指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；
 3、params，headers
