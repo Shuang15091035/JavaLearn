@@ -1,5 +1,7 @@
 # JavaLearn (javaEE)
-## Java枚举值定义
+## 校验枚举值的正确传值
+
+### Java枚举值定义
 public enum ChannelidDic {
 
 CertificatetDic_CONSTRUCTIONBANK("建设银行", "F000"),
@@ -63,8 +65,7 @@ return index;
 }
 
 }
-
-## 关于动态监测入参枚举值匹配
+### 关于动态监测入参枚举值匹配
 public static boolean requestParameterDicCheck(Map requestMap) throws Exception {
 Set<String> intersection = new HashSet(); //交集
 intersection.clear();
@@ -173,4 +174,48 @@ queryResult.set(QueryRequestParam.FUNDNAME,"name");
 queryResult.set(QueryRequestParam.FUNDTYPE,"type");
 queryResult.set(QueryRequestParam.PAGEINDEX,"index");
 int pause = 0;
+}
+## 对入参长度的判断
+public class ThirdDataInterceptor extends HandlerInterceptorAdapter {
+
+
+private static Set<String> queryParamDictionary = new HashSet<>(Arrays.asList("fundcode", "startdate", "enddate"));
+private Set<String> intersection = new HashSet<String>(); //交集
+
+@Override
+public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+
+Set<String> requestParam = httpServletRequest.getParameterMap().keySet();
+intersection.clear();
+intersection.addAll(queryParamDictionary);
+intersection.retainAll(requestParam);
+for (String paramName : intersection) {
+String paramValue = httpServletRequest.getParameter(paramName);
+switch (paramName) {
+case "fundcode": {
+
+if (paramValue.getBytes("utf-8").length > 6) {
+throw new YmfrontGmException(MsgConstant.ERROR_CODE, "[" + paramName + "]" + "入参数据缓冲区太小");
+}
+break;
+}
+case "startdate":
+case "enddate": {
+if (StringUtil.notEmpty(paramValue)) {
+if (paramValue.getBytes("utf-8").length > 8) {
+throw new YmfrontGmException(MsgConstant.ERROR_CODE, "[" + paramName + "]" + "入参数据缓冲区太小");
+}
+try {
+MsgConstant.format.parse(paramValue);
+} catch (Exception e) {
+throw new YmfrontGmException(MsgConstant.ERROR_CODE, "[" + paramName + "]" + "yyyyMMdd");
+}
+}
+break;
+}
+default:
+}
+}
+return true;
+}
 }

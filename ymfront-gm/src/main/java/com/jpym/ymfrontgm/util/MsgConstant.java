@@ -26,7 +26,7 @@ public class MsgConstant {
     public static final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 
     //需要校验的参数字典
-    public static final Map<String, Class> paramDictionary = new HashMap() {{
+    public static final Map<String, Class> paramDictionary = new HashMap<String, Class>() {{
         put("invtp", InvtpDic.class);
         put("certificatetype", CertificatetDic.class);
         put("sex", SexDic.class);
@@ -45,14 +45,14 @@ public class MsgConstant {
         put("fundtype", FundTypeDic.class);
     }};
 
-    public static final Map<FundListDic, Class> fundListDicMap = new HashMap() {{
+    public static final Map<FundListDic, Class> fundListDicMap = new HashMap<FundListDic,Class>() {{
         put(FundListDic.FundListDic_HOMEPAGEOPTIMIZATION, FundListOptSelLg.class);
         put(FundListDic.FundListDic_RANKINGLIST, FundListRankingLg.class);
         put(FundListDic.FundListDic_FIXINVESTMENTOPTIMIZATION, FundListFixedInvestLg.class);
         put(FundListDic.FundListDic_FUNDSEARCHBYIDENTIFY, FundListSearchLg.class);
     }};
 
-    public static final Map<String, String> fundListConstMapper = new HashMap() {{
+    public static final Map<String, String> fundListConstMapper = new HashMap<String,String>() {{
         put("fundListSearchLg", "00");
         put("fundListOptSelLg", "01");
         put("fundListRankingLg", "02");
