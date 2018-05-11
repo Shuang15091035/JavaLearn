@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jpym/!svn/ver/408/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model
+END
+RiskLevelQuestionModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/jpym/!svn/ver/373/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/RiskLevelQuestionModel.java
+END
+GMFundListConfigureModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/jpym/!svn/ver/366/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/GMFundListConfigureModel.java
+END
+FundNoticeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/jpym/!svn/ver/329/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundNoticeModel.java
+END
+FundIntroductionModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundIntroductionModel.java
+END
+TradeFeeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/TradeFeeModel.java
+END
+OpenAccountModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/OpenAccountModel.java
+END
+FundListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundListModel.java
+END
+TopTenStocksModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/TopTenStocksModel.java
+END
+BankInfoModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jpym/!svn/ver/132/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/BankInfoModel.java
+END
+TotalAssetAllocationModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/jpym/!svn/ver/355/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/TotalAssetAllocationModel.java
+END
+CustomerRiskLevelCommitModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustomerRiskLevelCommitModel.java
+END
+InvestorAgreementSignedModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/InvestorAgreementSignedModel.java
+END
+CustomerRiskLevelQueryModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustomerRiskLevelQueryModel.java
+END
+OnlineTradeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/288/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/OnlineTradeModel.java
+END
+FundAssetComponentModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundAssetComponentModel.java
+END
+FundIncomeFigureModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/jpym/!svn/ver/317/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundIncomeFigureModel.java
+END
+FundHistoryNavModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundHistoryNavModel.java
+END
+FundStrategyModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundStrategyModel.java
+END
+SubscribleApplyModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/SubscribleApplyModel.java
+END
+FundBonusModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/jpym/!svn/ver/329/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundBonusModel.java
+END
+CommissionFeeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CommissionFeeModel.java
+END
+RedeemModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/RedeemModel.java
+END
+CustHistoryBonusModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustHistoryBonusModel.java
+END
+CustBankCarListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustBankCarListModel.java
+END
+FixOpenTradeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FixOpenTradeModel.java
+END
+FixedInvestmentListModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FixedInvestmentListModel.java
+END
+CustCancleTradeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustCancleTradeModel.java
+END
+FundAssetDetailBankCardModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/jpym/!svn/ver/408/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundAssetDetailBankCardModel.java
+END
+FundManagerModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundManagerModel.java
+END
+FundPerformanceModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundPerformanceModel.java
+END
+FundAssetAllocationModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/jpym/!svn/ver/334/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundAssetAllocationModel.java
+END
+CustomerInfoModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustomerInfoModel.java
+END
+AddBankCardModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/AddBankCardModel.java
+END
+TATradeFeeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/TATradeFeeModel.java
+END
+ConfirmedOrderModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jpym/!svn/ver/408/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/ConfirmedOrderModel.java
+END
+FixInvestmentEndTradeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FixInvestmentEndTradeModel.java
+END
+CustomerCustNoModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/CustomerCustNoModel.java
+END
+FundAssetDetailProductModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundAssetDetailProductModel.java
+END
+FixedInvestmentEndModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/jpym/!svn/ver/112/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FixedInvestmentEndModel.java
+END
+FundDetailModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundDetailModel.java
+END
+FundCompanyModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/model/FundCompanyModel.java
+END

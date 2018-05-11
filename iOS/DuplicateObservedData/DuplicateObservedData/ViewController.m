@@ -10,10 +10,9 @@
 #import "InternalLogic.h"
 
 @interface ViewController () <UITextFieldDelegate,InternalLogicDelegate>
-@property (nonatomic, strong) NSString *startStr;
-@property (nonatomic, strong) NSString *endStr;
-@property (nonatomic, strong) NSString *lengthStr;
+
 @property (nonatomic, strong) InternalLogic *internalLogic;
+
 @end
 
 @implementation ViewController
@@ -21,9 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.internalLogic = [InternalLogic new];
-    self.internalLogic.delegate = self;
+    
 }
+#pragma - mark 文本框代理方法
+
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField == _startField) {
         self.startStr = _startField.text;
@@ -36,40 +36,34 @@
     }
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma -mark 业务逻辑模块
+- (InternalLogic *)internalLogic{
+    if (_internalLogic == nil) {
+        _internalLogic = [InternalLogic new];
+        _internalLogic.delegate = self;
+    }
+    return _internalLogic;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (NSString *)startStr{
-    return _internalLogic.strEnd;
+    return self.internalLogic.strEnd;
 }
 - (void)setStartStr:(NSString *)startStr{
-    [_internalLogic setStrStart:startStr];
+    [self.internalLogic setStrStart:startStr];
 }
 
 - (NSString *)endStr{
-    return _internalLogic.strEnd;
+    return self.internalLogic.strEnd;
 }
 -(void)setEndStr:(NSString *)endStr{
-    [_internalLogic setStrEnd:endStr];
+    [self.internalLogic setStrEnd:endStr];
 }
 
 - (void)setLengthStr:(NSString *)lengthStr{
-    [_internalLogic setStrLength:lengthStr];
+    [self.internalLogic setStrLength:lengthStr];
 }
 - (NSString *)lengthStr{
-    return [_internalLogic strLength];
+    return [self.internalLogic strLength];
 }
 -(void)updateStrEnd:(InternalLogic *)internalLogic stringEnd:(NSString *)strEnd{
     [self.endField setText:strEnd];
@@ -77,4 +71,10 @@
 -(void)updateStrLength:(InternalLogic *)internalLogic StringLength:(NSString *)strLength{
     [self.lengthField setText:strLength];
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 @end

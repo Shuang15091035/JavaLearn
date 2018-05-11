@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/jpym/!svn/ver/329/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao
+END
+FundDocumentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundDocumentDao.java
+END
+FundPerformanceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundPerformanceDao.java
+END
+GMFundListConfigureDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/132/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/GMFundListConfigureDao.java
+END
+FundNoticeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/jpym/!svn/ver/329/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundNoticeDao.java
+END
+FundStrategyDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundStrategyDao.java
+END
+FundBonusDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundBonusDao.java
+END
+FundCompanyDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundCompanyDao.java
+END
+FundHistoryNavDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/jpym/!svn/ver/329/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundHistoryNavDao.java
+END
+BankInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/jpym/!svn/ver/132/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/BankInfoDao.java
+END
+FundManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/jpym/!svn/ver/112/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundManagerDao.java
+END
+FundIncomeFigureDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/dao/FundIncomeFigureDao.java
+END

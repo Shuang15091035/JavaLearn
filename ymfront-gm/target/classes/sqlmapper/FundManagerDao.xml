@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jpym.ymfrontgm.dao.FundManagerDao">
+    <resultMap id="FundManager" type="com.jpym.ymfrontgm.model.FundManagerModel">
+        <result property="fundcode" column="fund_code" jdbcType="VARCHAR"></result>
+        <result property="fundname" column="fund_name" jdbcType="VARCHAR"></result>
+        <result property="managername" column="manager_name" jdbcType="VARCHAR"></result>
+        <result property="sex" column="sex" jdbcType="VARCHAR"></result>
+        <result property="grale" column="grale" jdbcType="VARCHAR"></result>
+        <result property="birthdate" column="birth_date" jdbcType="VARCHAR"></result>
+        <result property="pvc" column="pvc" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="fundManagerInformation" parameterType="String" resultMap="FundManager">
+        SELECT
+        ftfb.FSYMBOL AS fund_code, --基金代码
+        ftfb.FDSNAME AS fund_name, --基金名称
+        ftfb.MANAGERNAME AS manager_name, --基金经理名称,
+        CASE
+        WHEN ftfm.GENDER = '1' THEN
+        '男'
+        WHEN ftfm.GENDER = '2' THEN
+        '女'
+        WHEN ftfm.GENDER = '9' THEN
+        '未披露'
+        ELSE
+        ''
+        END AS sex, --性别
+        ftfm.BIRTHDATE AS birth_date, --出生日期
+        CASE
+        WHEN ftfm.DEGREE = '1' THEN '博士'
+        WHEN ftfm.DEGREE = '2' THEN '硕士'
+        WHEN ftfm.DEGREE = '3' THEN '学士'
+        WHEN ftfm.DEGREE = '4' THEN '大专'
+        WHEN ftfm.DEGREE = '5' THEN '高中'
+        WHEN ftfm.DEGREE = '6' THEN '中专'
+        WHEN ftfm.DEGREE = '7' THEN '初中及以下'
+        WHEN ftfm.DEGREE = '9' THEN '未披露'
+        ELSE
+        ''
+        END AS grale, --学历
+        to_char(ftfm.REMARK) AS pvc --简历
+        FROM finchina.tq_fd_basicinfo@finchinadb ftfb, --基金基本信息
+        finchina.tq_fd_managerinfo@finchinadb ftfm --基金经理资料表
+        WHERE ftfb.FSYMBOL = #{fund_code}
+        AND ftfb.SECURITYID = ftfm.SECURITYID
+        AND ftfm.isvalid = 1 --是否有效：1有效
+        AND ftfm.ISINCUMBENT = 1 --是否在任
+    </select>
+</mapper>

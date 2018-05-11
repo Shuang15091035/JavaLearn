@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper
+END
+FundPerformanceDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundPerformanceDao.xml
+END
+FundNoticeDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundNoticeDao.xml
+END
+FundStrategyDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundStrategyDao.xml
+END
+FundBonusDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundBonusDao.xml
+END
+FundCompanyDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundCompanyDao.xml
+END
+FundHistoryNavDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/jpym/!svn/ver/415/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundHistoryNavDao.xml
+END
+BankInfoDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/BankInfoDao.xml
+END
+FundManagerDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundManagerDao.xml
+END
+FundIncomeFigureDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundIncomeFigureDao.xml
+END
+GMFundListConfigure.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/GMFundListConfigure.xml
+END
+FundDocumentDao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/sqlmapper/FundDocumentDao.xml
+END

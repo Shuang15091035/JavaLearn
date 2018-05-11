@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846D13BA206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D13B9206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m */; };
 		849E8D30206CCBF600A0F42F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E8D2F206CCBF600A0F42F /* AppDelegate.m */; };
 		849E8D3B206CCBF600A0F42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849E8D3A206CCBF600A0F42F /* Assets.xcassets */; };
 		849E8D3E206CCBF600A0F42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849E8D3C206CCBF600A0F42F /* LaunchScreen.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		846D13B8206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplaceConditionalWithPolymorphism.h; sourceTree = "<group>"; };
+		846D13B9206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceConditionalWithPolymorphism.m; sourceTree = "<group>"; };
 		849E8D2B206CCBF600A0F42F /* DuplicateObservedData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuplicateObservedData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849E8D2E206CCBF600A0F42F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		849E8D2F206CCBF600A0F42F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846D13B5206DE04400AFBABA /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		846D13B6206DE04E00AFBABA /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				849E8D4F206CF37300A0F42F /* InternalLogic.h */,
+				849E8D50206CF37300A0F42F /* InternalLogic.m */,
+				846D13B8206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.h */,
+				846D13B9206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		846D13B7206DE05400AFBABA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		849E8D22206CCBF600A0F42F = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +89,13 @@
 		849E8D2D206CCBF600A0F42F /* DuplicateObservedData */ = {
 			isa = PBXGroup;
 			children = (
+				846D13B7206DE05400AFBABA /* controller */,
+				846D13B6206DE04E00AFBABA /* logic */,
+				846D13B5206DE04400AFBABA /* model */,
 				849E8D2E206CCBF600A0F42F /* AppDelegate.h */,
 				849E8D2F206CCBF600A0F42F /* AppDelegate.m */,
 				849E8D4A206CD89C00A0F42F /* ViewController.h */,
 				849E8D4B206CD89C00A0F42F /* ViewController.m */,
-				849E8D4F206CF37300A0F42F /* InternalLogic.h */,
-				849E8D50206CF37300A0F42F /* InternalLogic.m */,
 				849E8D4C206CD89C00A0F42F /* ViewController.xib */,
 				849E8D3A206CCBF600A0F42F /* Assets.xcassets */,
 				849E8D3C206CCBF600A0F42F /* LaunchScreen.storyboard */,
@@ -147,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846D13BA206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m in Sources */,
 				849E8D4D206CD89C00A0F42F /* ViewController.m in Sources */,
 				849E8D51206CF37300A0F42F /* InternalLogic.m in Sources */,
 				849E8D30206CCBF600A0F42F /* AppDelegate.m in Sources */,

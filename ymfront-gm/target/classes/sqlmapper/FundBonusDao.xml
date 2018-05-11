@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.jpym.ymfrontgm.dao.FundBonusDao">
+
+    <resultMap id="FundBonusModel" type="com.jpym.ymfrontgm.model.FundBonusModel">
+        <result property="fundcode" column="fund_code" jdbcType="VARCHAR"></result>
+        <result property="fundname" column="fund_name" jdbcType="VARCHAR"></result>
+        <result property="recorddate" column="record_date" jdbcType="VARCHAR"></result>
+        <result property="bonusdate" column="out_dev_date" jdbcType="VARCHAR"></result>
+        <result property="sharemodel" column="def_share_mode" jdbcType="VARCHAR"></result>
+        <result property="unitataxdev" column="unit_ataxdev" jdbcType="VARCHAR"></result>
+        <result property="nums" column="nums" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <select id="searchFundBonus" resultMap="FundBonusModel">
+        SELECT bb.fund_code AS fund_code, --基金代码
+        bb.fund_name AS fund_name, --基金名称
+        bb.record_date AS record_date, --权益登记日
+        bb.out_dev_date AS out_dev_date, --场外红利发放日
+        bb.def_share_mode AS def_share_mode, --分红方式:1现金分红 2红利再投资 3特殊分红
+        bb.unit_ataxdev AS unit_ataxdev, --单位税后红利 (元/份)
+        bb.nums AS nums
+        FROM (SELECT aa.*, ROWNUM AS rn
+        FROM (SELECT tfb.*, COUNT(1) OVER(PARTITION BY tfb.fund_code) AS nums
+        FROM t_fund_bonus tfb
+        WHERE tfb.fund_code = #{fund_code}
+        ORDER BY tfb.record_date) aa
+        WHERE ROWNUM &lt;= #{end_number}) bb
+        WHERE bb.rn &gt;= #{start_number}
+    </select>
+
+</mapper>

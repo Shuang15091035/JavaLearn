@@ -1,0 +1,8 @@
+# 测试库Oracle数据源
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.30.100:1521:orcl
+    username: ymfront
+    password: ymfront
+    type: com.alibaba.druid.pool.DruidDataSource

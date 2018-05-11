@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/jpym/!svn/ver/417/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service
+END
+FundPerformanceService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundPerformanceService.java
+END
+GMFundListConfigureService.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/GMFundListConfigureService.java
+END
+FundStrategyService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundStrategyService.java
+END
+FundListSearchLg.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundListSearchLg.java
+END
+FundListOptSelLg.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundListOptSelLg.java
+END
+FundHistoryNavService.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/jpym/!svn/ver/317/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundHistoryNavService.java
+END
+FundCompanyService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundCompanyService.java
+END
+FundManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundManagerService.java
+END
+BankInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/BankInfoService.java
+END
+FieldMapperService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/jpym/!svn/ver/355/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FieldMapperService.java
+END
+FundIncomeFigureService.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundIncomeFigureService.java
+END
+FundListLg.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/jpym/!svn/ver/410/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundListLg.java
+END
+FundDocumentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundDocumentService.java
+END
+AccountService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/jpym/!svn/ver/418/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/AccountService.java
+END
+FundNoticeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundNoticeService.java
+END
+TradeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/jpym/!svn/ver/418/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/TradeService.java
+END
+FundBonusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundBonusService.java
+END
+FundListFixedInvestLg.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundListFixedInvestLg.java
+END
+FundListRankingLg.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/FundListRankingLg.java
+END
+QueryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/jpym/!svn/ver/417/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/service/QueryService.java
+END

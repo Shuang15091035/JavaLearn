@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources
+END
+application-dev.yml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jpym/!svn/ver/199/source/ymfront/ymfront-gm/src/main/resources/application-dev.yml
+END
+system.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/resources/system.properties
+END
+application-test.yml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/jpym/!svn/ver/385/source/ymfront/ymfront-gm/src/main/resources/application-test.yml
+END
+application.yml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/jpym/!svn/ver/412/source/ymfront/ymfront-gm/src/main/resources/application.yml
+END
+application-prod.yml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/jpym/!svn/ver/385/source/ymfront/ymfront-gm/src/main/resources/application-prod.yml
+END
+Dockerfile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/jpym/!svn/ver/93/source/ymfront/ymfront-gm/src/main/resources/Dockerfile
+END
+jpcf-private-key.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/jpym/!svn/ver/280/source/ymfront/ymfront-gm/src/main/resources/jpcf-private-key.properties
+END

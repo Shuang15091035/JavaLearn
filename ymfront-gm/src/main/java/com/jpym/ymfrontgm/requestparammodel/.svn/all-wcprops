@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel
+END
+RiskCheckRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/RiskCheckRequestModel.java
+END
+CustRiskRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/jpym/!svn/ver/318/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/CustRiskRequestModel.java
+END
+SubscribeApplyRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/jpym/!svn/ver/251/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/SubscribeApplyRequestModel.java
+END
+FixTradeOpenRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/FixTradeOpenRequestModel.java
+END
+BgMsgSendRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/BgMsgSendRequestModel.java
+END
+FixInvestmentEndRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/FixInvestmentEndRequestModel.java
+END
+BgMsgCheckRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/jpym/!svn/ver/278/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/BgMsgCheckRequestModel.java
+END
+AddBankCardRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/jpym/!svn/ver/278/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/AddBankCardRequestModel.java
+END
+OpenAccountRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/OpenAccountRequestModel.java
+END
+CustCancleOrderRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/CustCancleOrderRequestModel.java
+END
+RedeemRequestModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/jpym/!svn/ver/225/source/ymfront/ymfront-gm/src/main/java/com/jpym/ymfrontgm/requestparammodel/RedeemRequestModel.java
+END

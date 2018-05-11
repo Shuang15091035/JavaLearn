@@ -111,3 +111,8 @@ spring 提供监听器 ContextLoaderListener ->web.xml <listenner>
 <listener>
     <
 </Listener>
+
+spring中bean的继承和Java中的继承不同：前者是实例之间的参数的延续，后者是特殊的细化，前者是对象之间的关系，后者是 类之间的关系。
+a.Spring 中的子bean和父bean可以是不同的类型，Java中继承，子类是一种特殊的父类；
+b.Spring中的bean的继承是实例之间的关系，主要表现是参数的延续，而java中的继承是类和类之间的关系，主要体现在方法和属性的延续。
+c.Spring中子bean不可以作为父bean使用，不具备多态性，Java中的子类实例完全可以做父类实例使用。

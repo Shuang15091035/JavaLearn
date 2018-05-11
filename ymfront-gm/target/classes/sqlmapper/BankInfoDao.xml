@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jpym.ymfrontgm.dao.BankInfoDao">
+    <resultMap id="bankInfo" type="com.jpym.ymfrontgm.model.BankInfoModel">
+        <result property="bankcode" column="bankCode" jdbcType="VARCHAR"></result>
+        <result property="bankname" column="bankName" jdbcType="VARCHAR"></result>
+        <result property="bankcity" column="bankCity" jdbcType="VARCHAR"></result>
+        <result property="channelid" column="channelid" jdbcType="VARCHAR"></result>
+        <result property="upperlimit" column="upperLimit" javaType="BigDecimal" jdbcType="VARCHAR"></result>
+        <result property="dayupperlimit" column="dayUpperLimit" jdbcType="VARCHAR"></result>
+        <result property="channelname" column="channelName" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <select id="channelidAndChannelNameByBankName" parameterType="String" resultMap="bankInfo">
+        SELECT tb.bank_code AS bankCode,
+        tb.bank_name AS bankName,
+        tb.city AS bankCity,
+        tb.channel_id AS channelid,
+        tb.upper_limit AS upperLimit,
+        tb.day_upper_limit AS dayUpperLimit,
+        tb.third_bank_name AS channelName
+        FROM t_bank tb
+        WHERE tb.channel_id=#{bankname}
+    </select>
+
+</mapper>
