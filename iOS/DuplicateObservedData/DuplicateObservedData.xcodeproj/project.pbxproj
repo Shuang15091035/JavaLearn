@@ -32,6 +32,19 @@
 		849E8D4C206CD89C00A0F42F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		849E8D4F206CF37300A0F42F /* InternalLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalLogic.h; sourceTree = "<group>"; };
 		849E8D50206CF37300A0F42F /* InternalLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalLogic.m; sourceTree = "<group>"; };
+		84FDB9F220A5A0880051FFA5 /* StraightInsertionSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StraightInsertionSort.h; sourceTree = "<group>"; };
+		84FDB9F320A5A0880051FFA5 /* StraightInsertionSort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StraightInsertionSort.m; sourceTree = "<group>"; };
+		84FDB9F520A5A0880051FFA5 /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		84FDB9F620A5A0880051FFA5 /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		84FDB9F720A5A0880051FFA5 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		84FDB9F820A5A0880051FFA5 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		84FDB9F920A5A0880051FFA5 /* HouseHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HouseHolder.h; sourceTree = "<group>"; };
+		84FDB9FA20A5A0880051FFA5 /* HouseHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseHolder.m; sourceTree = "<group>"; };
+		84FDB9FB20A5A0880051FFA5 /* OCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDelegate.h; sourceTree = "<group>"; };
+		84FDB9FC20A5A0880051FFA5 /* OCDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDelegate.m; sourceTree = "<group>"; };
+		84FDB9FD20A5A0880051FFA5 /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
+		84FDB9FE20A5A0880051FFA5 /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
+		84FDB9FF20A5A0880051FFA5 /* RentProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +102,8 @@
 		849E8D2D206CCBF600A0F42F /* DuplicateObservedData */ = {
 			isa = PBXGroup;
 			children = (
+				84FDB9F020A5A0880051FFA5 /* datastruct */,
+				84FDB9F420A5A0880051FFA5 /* pattern */,
 				846D13B7206DE05400AFBABA /* controller */,
 				846D13B6206DE04E00AFBABA /* logic */,
 				846D13B5206DE04400AFBABA /* model */,
@@ -103,6 +118,41 @@
 				849E8D40206CCBF600A0F42F /* main.m */,
 			);
 			path = DuplicateObservedData;
+			sourceTree = "<group>";
+		};
+		84FDB9F020A5A0880051FFA5 /* datastruct */ = {
+			isa = PBXGroup;
+			children = (
+				84FDB9F120A5A0880051FFA5 /* sort */,
+			);
+			path = datastruct;
+			sourceTree = "<group>";
+		};
+		84FDB9F120A5A0880051FFA5 /* sort */ = {
+			isa = PBXGroup;
+			children = (
+				84FDB9F220A5A0880051FFA5 /* StraightInsertionSort.h */,
+				84FDB9F320A5A0880051FFA5 /* StraightInsertionSort.m */,
+			);
+			path = sort;
+			sourceTree = "<group>";
+		};
+		84FDB9F420A5A0880051FFA5 /* pattern */ = {
+			isa = PBXGroup;
+			children = (
+				84FDB9F520A5A0880051FFA5 /* Cat.h */,
+				84FDB9F620A5A0880051FFA5 /* Cat.m */,
+				84FDB9F720A5A0880051FFA5 /* Dog.h */,
+				84FDB9F820A5A0880051FFA5 /* Dog.m */,
+				84FDB9F920A5A0880051FFA5 /* HouseHolder.h */,
+				84FDB9FA20A5A0880051FFA5 /* HouseHolder.m */,
+				84FDB9FB20A5A0880051FFA5 /* OCDelegate.h */,
+				84FDB9FC20A5A0880051FFA5 /* OCDelegate.m */,
+				84FDB9FD20A5A0880051FFA5 /* Proxy.h */,
+				84FDB9FE20A5A0880051FFA5 /* Proxy.m */,
+				84FDB9FF20A5A0880051FFA5 /* RentProtocol.h */,
+			);
+			path = pattern;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

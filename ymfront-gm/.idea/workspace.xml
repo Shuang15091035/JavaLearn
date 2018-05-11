@@ -61,8 +61,8 @@
       <file leaf-file-name="JzTestController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/controller/JzTestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="820">
+              <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -276,7 +276,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/service/FundListFixedInvestLg.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/service/FundListOptSelLg.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/service/FundListLg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/controller/JzTestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/requestParamDic/RequestParamMap.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jpym/ymfrontgm/YmfrontGmApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/requestParam/RequestParamMap.java" />
@@ -284,6 +283,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/interceptor/ApiInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/requestParam/QueryRequestParam.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/util/MsgConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/controller/JzTestController.java" />
       </list>
     </option>
   </component>
@@ -1036,7 +1036,7 @@
       <workItem from="1525659448320" duration="697000" />
       <workItem from="1525662850822" duration="16000" />
       <workItem from="1525920779744" duration="13499000" />
-      <workItem from="1526001366522" duration="2780000" />
+      <workItem from="1526001366522" duration="7266000" />
     </task>
     <servers />
   </component>
@@ -1073,7 +1073,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1294080000" />
+    <option name="totallyTimeSpent" value="1298566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1086,7 +1086,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="27" width="1598" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21970555" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1498,9 +1497,9 @@
         <state relative-caret-position="272">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#493#494#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1526,7 +1525,7 @@
         <state relative-caret-position="187">
           <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding>
-            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1653,8 +1652,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jpym/ymfrontgm/controller/JzTestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="820">
+          <caret line="94" column="7" lean-forward="false" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
           <folding />
         </state>
       </provider>
