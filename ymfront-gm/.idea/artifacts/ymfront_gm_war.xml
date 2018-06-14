@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ymfront-gm:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="ymfront-gm.war">
-      <element id="artifact" artifact-name="ymfront-gm:war exploded" />
-    </root>
-  </artifact>
-</component>
