@@ -50,8 +50,10 @@ fi
 docker run -d -p $API_PROT:8080 --name $CONTAINER_NAME $IMAGE_NAME
 rm -f Dockerfile
 
+docker run -d -h gitlab.shuang.com -p 22:22 -p 8081:80 -v ~/gitlab/etc:/etc/gitlab -v ~/gitlab/log:/var/log/gitlab -v ~/gitlab/opt:/var/opt/gitlab --name gitlab gitlab/gitlab-ce
+
 ### 在Jenkins内部运行处在宿主机上的Docker：
-docker run -d -p 8081:8080 -v ~/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker --link gitlab:gitlab.ymfront.com --name jenkins shuang/jenkins
+docker run -d -p 8080:8080 -p 50000:50000 -v ~/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v ~/.m2/repository:/repository --link gitlab:gitlab.ymfront.com --name jenkins jenkinsci/jenkins
 
 docker run -d --name ymfront-center -p 8761:8761 ymfront-center:test
 
