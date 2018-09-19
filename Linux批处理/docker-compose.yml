@@ -1,0 +1,43 @@
+version: '3'
+services:
+  ymfront-center:
+    image: hub.c.163.com/shuangtest/ymfront-center:dev
+    ports:
+      - "8761:8761"
+  ymfront-finchina-ms:
+    image: hub.c.163.com/shuangtest/ymfront-finchina-ms:dev
+    depends_on:
+      - ymfront-center
+    ports:
+       - "8762:8762"
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+  ymfront-gm:
+    image: hub.c.163.com/shuangtest/ymfront-gm:dev
+    depends_on:
+      - ymfront-center
+    ports:
+      - "8085:8085"
+#    env=test/prod
+#    volumes:
+#      - /var/jz/cert:/var/jz/cert
+#    env=dev
+    volumes:
+      - /Users/admin/Documents/cert/:/var/jz/cert/
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+  ymfront-route:
+    image: hub.c.163.com/shuangtest/ymfront-route:dev
+    depends_on:
+      - ymfront-center
+    ports:
+      - "8764:8764"
+#    deploy:
+#      replicas: 3
+#      restart_policy:
+#        condition: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+      zuul.prefix: /ymfront
+      zuul.routes.gm.path: /gm/**
+      zuul.routes.gm.url: http://ymfront-gm:8085/
