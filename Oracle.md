@@ -130,4 +130,20 @@ break on nulll 取消报表格式
 select 语句是可以相加的，通过集合运算
 
 ------ 多表查询——————
+原始数据 表TQTest
+rowkey
+2
+3;5
+查询数据
+rowkey
+2
+3
+5
+SQL实现：
+with t as (select * from TQTest)
+select regexp_substr(TRD_CODE_SECU, '[^;]+', 1, level) temp, t.*
+from t
+connect by level <= regexp_count(TRD_CODE_SECU, ';') + 1
+and TRD_CODE_SECU = prior TRD_CODE_SECU
+and prior dbms_random.value > 0);
 
