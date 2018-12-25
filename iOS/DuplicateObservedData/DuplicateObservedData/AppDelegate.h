@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef struct BiTNode {
+    struct BiTNode *left,*rigth;
+    int data;
+}BiTNode,*BiTree;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

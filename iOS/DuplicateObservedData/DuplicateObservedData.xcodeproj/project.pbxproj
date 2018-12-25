@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6526982A215D143700254717 /* SqStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 65269829215D143700254717 /* SqStack.m */; };
+		6526982E215D1FD900254717 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526982D215D1FD900254717 /* Queue.m */; };
 		846D13BA206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D13B9206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m */; };
 		849E8D30206CCBF600A0F42F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E8D2F206CCBF600A0F42F /* AppDelegate.m */; };
 		849E8D3B206CCBF600A0F42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849E8D3A206CCBF600A0F42F /* Assets.xcassets */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65269828215D143700254717 /* SqStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqStack.h; sourceTree = "<group>"; };
+		65269829215D143700254717 /* SqStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqStack.m; sourceTree = "<group>"; };
+		6526982C215D1FD900254717 /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		6526982D215D1FD900254717 /* Queue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 		846D13B8206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplaceConditionalWithPolymorphism.h; sourceTree = "<group>"; };
 		846D13B9206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceConditionalWithPolymorphism.m; sourceTree = "<group>"; };
 		849E8D2B206CCBF600A0F42F /* DuplicateObservedData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuplicateObservedData.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65269821215D10F100254717 /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				65269828215D143700254717 /* SqStack.h */,
+				65269829215D143700254717 /* SqStack.m */,
+			);
+			path = stack;
+			sourceTree = "<group>";
+		};
+		6526982B215D1FBE00254717 /* queue */ = {
+			isa = PBXGroup;
+			children = (
+				6526982C215D1FD900254717 /* Queue.h */,
+				6526982D215D1FD900254717 /* Queue.m */,
+			);
+			path = queue;
+			sourceTree = "<group>";
+		};
 		846D13B5206DE04400AFBABA /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +147,8 @@
 		84FDB9F020A5A0880051FFA5 /* datastruct */ = {
 			isa = PBXGroup;
 			children = (
+				6526982B215D1FBE00254717 /* queue */,
+				65269821215D10F100254717 /* stack */,
 				84FDB9F120A5A0880051FFA5 /* sort */,
 			);
 			path = datastruct;
@@ -226,9 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6526982E215D1FD900254717 /* Queue.m in Sources */,
 				846D13BA206DE12600AFBABA /* ReplaceConditionalWithPolymorphism.m in Sources */,
 				849E8D4D206CD89C00A0F42F /* ViewController.m in Sources */,
 				849E8D51206CF37300A0F42F /* InternalLogic.m in Sources */,
+				6526982A215D143700254717 /* SqStack.m in Sources */,
 				849E8D30206CCBF600A0F42F /* AppDelegate.m in Sources */,
 				849E8D41206CCBF600A0F42F /* main.m in Sources */,
 			);
