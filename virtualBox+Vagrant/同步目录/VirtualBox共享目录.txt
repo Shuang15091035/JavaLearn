@@ -1,0 +1,33 @@
+VirtualBox增加自动增强功能
+1. 启动VirtualBox中的虚拟机器
+2. 右击“设置”，选择“存储”
+3. 增加SATA控制器并载入VBoxGuestAdditions.iso
+4. 进入虚拟机器内部， 选择“设备“菜单后，”安装增强功能“
+   使用手工安装VBoxGuestAdditions.iso
+
+	sudo mkdir -p /media/cdrom
+
+	sudo mount -t auto /dev/cdrom /media/cdrom/
+
+	cd /media/cdrom/
+
+	sudo sh VBoxLinuxAdditions.run
+	
+5. 根据上述安装提示信息安装
+	yum install kernel
+	yum install kernel-devel
+	yum install kernel-headers
+	yum install gcc* 
+	yum install make
+	yum install kernel-devl-对应版本(sudo sh VBoxLinuxAdditions.run运行后会提示)
+
+6.	vagrant报错：/sbin/mount.vboxsf: mounting failed with the error: No such device
+    解决办法
+	yum clean all
+	yum update
+	yum install kernel
+	yum install kernel-devel
+	yum install kernel-headers
+	yum install gcc
+	yum install make  
+	reboot

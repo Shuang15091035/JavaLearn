@@ -1,0 +1,13 @@
+1.修改共享目录的配置：
+config.vm.synced_folder "./app", "/mnt", type: "nfs"
+2.配置 docker.vm.network "private_network", ip: "192.168.33.10" 
+否则通过vagrant reload 通过控制台会有以下错误
+Configuring and enabling network interfaces...
+NFS requires a host-only network to be created.
+Please add a host-only network to the machine (with either DHCP or a
+static IP) for NFS to work.
+3.通过vagrant reload命令重启，启动时可能会要求你输入当前登录到电脑上的用户的密码。
+==> default: Exporting NFS shared folders...
+==> default: Preparing to edit /etc/exports. Administrator privileges will be required...
+Password:
+==> default: Mounting NFS shared folders...

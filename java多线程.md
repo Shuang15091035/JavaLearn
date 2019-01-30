@@ -8,7 +8,10 @@
 /**
 *
 * 并发编程：原子性，可见性，有序性
-*
+*volatile：
+Java 理论与实践：讲解synchronize(原子性和可见性)和volatile(可见性)的区别
+如果严格遵循 volatile 的使用条件 —— 即变量真正独立于其他变量和自己以前的值
+
 * 有序性：JVM会发生指令重排序（Instruction Reorder）导致在前面的代码后执行
 *
 * 并发解决方案：？
@@ -61,3 +64,15 @@ YmThreadUtil.executorService.submit(taskApply);
 YmThreadUtil.executorService.submit(taskCancleTrade);
 JSONArray applyArr = taskApply.get();  //方法阻塞
 JSONArray cancleTradeArr = taskCancleTrade.get();
+
+
+### 独立的状态变量(CopyOnWriteArrayList线程安全的链表)
+private final List<KeyListener> keyListeners = new CopyOnWriteArrayList<KeyListener>();
+private final List<KeyListener> mouseListeners = new CopyOnWriteArrayList<MouseListener>();
+### 两个不独立的原子类(AtomicInteger)，存在第一个数值小于或等于第二个数值
+不能将线程安全性委托给它的线程安全状态变量
+### 迭代操作在副本上操作，可避免ConcurrentModificationExection
+### 降低锁的竞争程度
+    减少锁的持有时间
+    降低锁的请求频率
+    使用带有协调机制的独占锁
