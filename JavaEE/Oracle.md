@@ -1,3 +1,10 @@
+###  PLSQL 编译卡死的解决方案
+select va.sid,va.OBJECT from v$access va where object like 'PK_HISTORYNAV_MANUAL'   
+
+SELECT SID,SERIAL#,PADDR FROM V$SESSION WHERE SID= 25
+
+alter system kill session '25,17423' immediate; 
+
 Oracle支持的数据隔离级别：read commited(读已提交)，read serialization(串行化)
 数据库：是一个物理概念(存储在硬盘上)，数据库实例：数据库文件读取到内存中 关系至少是一对一，可为一对多
 ###  -------------SQL命令-------------
