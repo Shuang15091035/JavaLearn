@@ -62,3 +62,12 @@ docker run --link ymfront-center:8761 -p 8762:8762 ymfront-finchina-ms:test
 ### docker --link 可用于解决容器的连通性问题，但是该方式仅局限于统一宿主机上，不同宿主机无法使用该方式进行通信，docker1.9使用docker network create创建docker网络。
  --link gitlab:gitlab.ymfront.com  //gitlab = docker run --name gitlab -h gitlab.ymfront.com gitlab/gitlab-ce
 
+### 批量删除指定名称的docker镜像
+docker rmi -f $(docker images | grep "<none>" | awk '{print $3}')
+sudo docker rmi -f $(sudo docker images -aq)
+sudo docker rm -f $(sudo docker ps -aq)
+sudo docker stack deploy -c eureka.yml eureka
+sudo docker stack rm eureka
+sudo vi eureka.yml
+
+sudo docker stack deploy -c gmservice.yml ymfront

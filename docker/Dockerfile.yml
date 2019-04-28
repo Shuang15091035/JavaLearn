@@ -1,0 +1,69 @@
+version: '3'
+services:
+  ymfront-center:
+    image: shuangluck/ymfront-center:dev
+    ports:
+      - "8761:8761"
+    networks:
+      - net-overlay
+    deploy:
+      replicas: 1
+#      placement:
+#        constraints: [node.labels.role==center]
+#    environment:
+#      constraint: role==center
+  ymfront-finchina-ms:
+    image: shuangluck/ymfront-finchina-ms:dev
+    depends_on:
+      - ymfront-center
+#    ports:
+#       - "8762:8762"
+    networks:
+      - net-overlay
+    deploy:
+      replicas: 1
+#      placement:
+#        constraints: [node.labels.role==service]
+#    environment:
+#      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+#      constraint: role==service
+  ymfront-gm:
+    image: shuangluck/ymfront-gm:dev
+    depends_on:
+      - ymfront-center
+#    ports:
+#      - "8085:8085"
+    volumes:
+      - /Users/admin/Documents/cert/:/var/jz/cert/
+    networks:
+      - net-overlay
+    deploy:
+      replicas: 1
+#      placement:
+#        constraints: [node.labels.role==service]
+#    environment:
+#      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+#      constraint: role==service
+  ymfront-route:
+    image: shuangluck/ymfront-route:dev
+    depends_on:
+      - ymfront-center
+    ports:
+      - "8764:8764"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+#      placement:
+#        constraints: [node.labels.role==service]
+#    environment:
+#      eureka.client.serviceUrl.defaultZone: http://ymfront-center:8761/eureka/
+#      zuul.prefix: /ymfront
+#      zuul.routes.gm.path: /gm/**
+#      zuul.routes.gm.url: http://ymfront-gm:8085/
+#      constraint: role==service
+    networks:
+      - net-overlay
+networks:
+  net-overlay:
+    driver: overlay

@@ -27,3 +27,24 @@ countDownLatch.await();线程阻塞方法，当CountDownLatch值减为零，线�
 
 RabbitMq
 持久性：
+
+
+8.关于Java反射相关操作
+	http://tutorials.jenkov.com/java-reflection/dynamic-proxies.html
+    简单使用：
+        Class clazz = Class.forName("com.jpym.ymfrontcenter.Base");
+        Constructor constructor = clazz.getConstructor(new Class[]{Integer.class,Integer.class});
+        Object retObj = constructor.newInstance(new Object[]{new Integer(27),new Integer(22)});
+        Field field = retObj.getClass().getDeclaredField("num1");
+        field.setAccessible(true);
+        field.set(retObj,20);
+    反射内部生产的代理对象导出：
+        byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy0", RealObject.class.getInterfaces());
+        String path = "/Users/admin/Desktop/RealObject.class";
+        try(FileOutputStream fos = new FileOutputStream(path)) {
+            fos.write(classFile);
+            fos.flush();
+            System.out.println("代理类class文件写入成功");
+        } catch (Exception e) {
+            System.out.println("写文件错误");
+        }

@@ -155,3 +155,37 @@ connect by level <= regexp_count(TRD_CODE_SECU, ';') + 1
 and TRD_CODE_SECU = prior TRD_CODE_SECU
 and prior dbms_random.value > 0);
 
+
+### Oracle查看trace文件步骤
+ 
+1.获得当前trace文件生成路径
+
+SQL> select tracefile from v$process where addr in (select paddr from v$session where sid in (select sid from v$mystat));
+2.开启当前session的trace
+
+SQL> alter session set sql_trace=true;
+SQL> select count(*) from t1;
+3.转换trc文件内容为可读的输出结果
+ 
+C:\Documents and Settings\Administrator>tkprof f:\oracle\administrator\diag\rdbm
+s\orcl\orcl\trace\orcl_ora_1160.trc output=c:\aa.txt
+
+
+### 数据库高级管理
+  查看数据库表数据文件位置
+  SELECT *
+FROM DBA_DATA_FILES
+  查看所有表空间
+  SELECT * FROM DBA_TABLESPACES
+  查看表空间用量
+SELECT a.tablespace_name,
+A.BYTES / 1024 / 1024 TOTAL,
+       B.BYTES/ 1024 / 1024 USED,
+       C.BYTES / 1024 / 1024 FREE ,
+(b.bytes * 100) / a.bytes "% USED ",
+(c.bytes * 100) / a.bytes "% FREE "
+FROM sys.sm$ts_avail a, sys.sm$ts_used b, sys.sm$ts_free c
+WHERE a.tablespace_name = b.tablespace_name
+AND a.tablespace_name = c.tablespace_name;
+表空间扩容
+alter database datafile 'D:\JPYM\ORACLE\ORADATA\ORCL2\SYSTEM01.DBF' resize 1024M
