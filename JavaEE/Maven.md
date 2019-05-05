@@ -15,6 +15,11 @@ test:maven-surefire
     + site生命周期：
     pre-site()->site(生成项目站点文档)->post-site->site-deploy(将生成的站点发布到服务器上)
 
+dependencjar包写法可参考：
+    http://mvnrepository.com
+    如果网站不存在可通过：(jar包存在在.m2文件夹下)
+        mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14" "-Dversion=10.2.0.2.0" "-Dpackaging=jar" "-Dfile=D:\ojdbc12.jar"
+
 ## 钰茂项目实战：
 + maven多环境配置：
 ``` 
