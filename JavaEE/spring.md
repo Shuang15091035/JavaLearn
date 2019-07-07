@@ -417,3 +417,5 @@ Spring EL-Spring （SPring表达式语言）
                           max-request-size: 10MB
         4.5.2 HttpMessageConverter
             1. HttpMessageConverter 用来处理Request和Response里的数据的，Spring内置大量的    HttpMessageConverter，例如MappingJackson2HttpMessageConverter,StringHttpMessageConverter
+
+###
