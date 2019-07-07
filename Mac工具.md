@@ -17,3 +17,8 @@ https://rufus.ie
 		1. * [创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)
 		2.系统重启，长按Option键，选择U盘中系统
 		小结：通过键盘操作，Tab（选项选择）Space（选项确认）
+### Mac Ftp 服务使用
+Finder->前往 --> 连接服务器--> ftp://IP:port 或 ftp://username:password@IP:port ->远程ftp服务目录
+ftp服务器搭建简易方式：
+Windows：
+	"简单FTP Server"应用程序安装
