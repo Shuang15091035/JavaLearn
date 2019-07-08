@@ -4,6 +4,12 @@
 线程优先级：
 线程的状态：new, runable, blocked, waiting, time_waiting, terminated
 
+###并发编程BlockingQueue（放入和取出都会阻塞）取数据发现没有数据，一直阻塞知道有数据放入
+
+###并发编程锁
+
+###
+
 
 /**
 *
@@ -76,3 +82,5 @@ private final List<KeyListener> mouseListeners = new CopyOnWriteArrayList<MouseL
     减少锁的持有时间
     降低锁的请求频率
     使用带有协调机制的独占锁
+
+###

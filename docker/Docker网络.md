@@ -19,3 +19,22 @@ bridge:
 bridge模式是docker默认的，也是开发者最常使用的网络模式。在这种模式下，docker为容器创建独立的网络栈，保证容器内的进程使用独立的网络环境，
 实现容器之间、容器与宿主机之间的网络栈隔离。同时，通过宿主机上的docker0网桥，容器可以与宿主机乃至外界进行网络通信。
 其网络模型可以参考下图：
+
+## Linux network namespace
+	通过安装ip utility， iproute2 进行网路信息查看
+	管理容器namespace：
+		1.通过docker inspect --format '{{.State.Pid}}' containerId查看容器的PID
+		2.ln -s /proc/pid/ns/net /var/run/docker/netns/containerId 建立软连接
+		3.ip netns list 查看网络命名空间
+		4。通过ip工具进行网络配置
+		note:
+			进行网络配置需要开启特权模式：--privileged=true，否则是没有权限的，但会给主机单来安全隐患，建议使用ip netns exec
+			Ubuntu系统下通过nsenter操作namespace
+	pipeWork原理解析：
+		容器和主机处在同一个网络中，可通过交换机进行网络数据交互，虚拟场景下可通过建立虚拟网桥将容器连接到一个二层网络中，
+		安装网桥工具 yum install bridge-utils	
+		wget http://launchpad.net/bridgeutils/main/1.4/+download/bridge-utils-1.4.tar.gz
+		pipework:
+			桥接，直接路由，跨主机通信方式简单有效，但是要求主机在同一个局域网中，两台主机在不同的二级网络中，可通过隧道模式解决容器的跨主机网络通信。
+		OVS 划分VLAN
+			docker容器的VLAN划分 默认所有容器都连接在docker0 网桥上，这是一个普通的Linux网桥，Open VSwitch代替docker0进行VLAN划分，

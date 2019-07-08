@@ -189,3 +189,28 @@ WHERE a.tablespace_name = b.tablespace_name
 AND a.tablespace_name = c.tablespace_name;
 表空间扩容
 alter database datafile 'D:\JPYM\ORACLE\ORADATA\ORCL2\SYSTEM01.DBF' resize 1024M
+
+### Oracle TNS(transparence Network Substrate)配置
+TNS 包括服务端和客户端
+服务端：tnsnames.ora,listener.ora,sqlnet.ora,
+客户端：tnsnames.ora,sqlnet.ora
+listener.ora: 监听配置文件，成功启动后驻留在服务端的一个服务，默认监听1521端口客户端连接请求
+  监听地址，端口，协议，实例
+  SID_LIST_LISTENER:这部分配置了Oracle需要监听的实例（Oracle9I引入了动态监听服务注册，数据库启动时，会自动注册当前数据库实例到监听列表中）
+
+sqlnet.ora:用来管理和约束或限制tns连接的配置，通过在设置参数限制tns
+tnsnames.ora:配置客户端到服务器端的连接服务，
+  ADDRESS_LIST: Oracle数据库服务器监听地址信息，TNS可以通过这个地址和服务器通信
+  CONNECT_DATA: CLIENT要连接的数据库，以及数据库的连接方式。DEDICATED(专用)
+    (CONNECT_DATA = (SERVICE_NAME = CGDB) (SERVER = DEDICATED) ) )
+### window下oracle卸载
+  1.停止所有Oracle服务
+  2.在开始菜单中，找到Universal Installer，运行Oracle Universal Installer，单击卸载产品
+  3.除OraDb11g_home1外，删除所有服务
+  4.regedit HKEY_LOCAL_MACHINE\SOFTWARE，找到oracle
+  5.HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services中，删除所有oracle开头
+  6.在HKEY_CLASSES_ROOT，删除以ora开头的项
+  7.删除Oracle安装目录
+### Linux环境下【Oracle】进入sqlplus 删除键backspace时出现^H
+  当oracle进入sqlplus后，输入命令时候出现错误，我们按平时的习惯使用backspace键删除错误信息，此时会出现^H
+  解决办法：进入sqlplus之前，使用stty erase '^H'命令后，再次进入sqlplus即可

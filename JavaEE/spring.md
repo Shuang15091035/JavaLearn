@@ -14,7 +14,7 @@ ClassPathXmlApplicationContext: 用于加载classpath（类路径，src）下的
 FileSystemXmlApplicationContext: 用于加载指定盘符下的xml
 加载xml运行时位置->/WEB-INF/..xml 通过Java web ServletContext getRealPath获取具体盘符
 
-装配bean基于XML
+装配bean基于XML 
 实例化方式：三种方式：默认构造，静态工厂，工厂
 bean种类：
 普通bean：<bean id="" class="A"> </bean> ,spring直接创建A实例，并返回
@@ -68,7 +68,7 @@ prototype：多例
 <!--    注解-->
 就是一个类 @注解名称
 开发中使用注解取代XML配置文件
-
+<context:component-scan base-package="...">
 1.@Component 取代<bean class=">"
 @Component(id) 取代 <bean id="" class="">
 2.web开发，提供3个@Component注解衍生注解（功能一样）  取代<bean class="'">
@@ -95,8 +95,17 @@ prototype：多例
         @Qualifier
     方式3：名称注入
         @Resource("名称“)
+注解和XML混合：
+    Bean配置XML中
+依赖使用注解
+@Autowire
+    默认不生效，xml配置<context:annotation-config>
 
-
+1.<context:component-scan base-package="...">
+2.<context:annotation-config>
+不同时使用，
+    1扫描@Component注解是，注入注解自动生效
+    2xml和注解（注入）混合使用时，注解生效
 sprng整合junit
 jar包导入： 4 + 1 + logging + spring-test
 

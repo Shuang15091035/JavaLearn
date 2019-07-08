@@ -5,10 +5,25 @@ create temporary tablespace NOTIFYDB_TEMP tempfile '${ORACLE_HOME}\oradata\NOTIF
 create tablespace YMFRONT datafile '/data0/oradata/YUMAO/YMFRONT.dbf' size 512M reuse autoextend on next 40M maxsize unlimited default storage(initial 128k next 128k minextents 2 maxextents unlimited);
 ### 查看数据文件位置
 	select name from v$datafile
-
+### 查看所有的表空间
+	select * from dba_tablespaces;
+	select * from v$tablespaces;
+### 查看当前用户的表空间
+	select default_tablespaces 
+	from dba_users
+	where username='username'
+### 查看用户下的所有表
+	select * from user_tables;
+	select * from dba_tables 
+	where owner='username';
+### 查看表空间下的所有用户
+	select distinct s.owner
+	from dba_segments s
+	whree s.tablespace_name = 'username'
 ### 创建用户并指定表空间
 	create user ymfront identified by ymfront default tablespace YMFRONT 
-
+### 给已存在的用户分配表空间
+	alter user username default tablespace userspace;
 ### 通过sysdba给用户分配权限/角色
 	grant dba to ymfront;
 	grant connect,resource to ymfront;
@@ -34,8 +49,24 @@ create tablespace YMFRONT datafile '/data0/oradata/YUMAO/YMFRONT.dbf' size 512M 
 		CRREATE TRIGGER	--创建触发器
 		CTEATE TYPE	--创建类型
 	DBA：最高权限，相当于管理员角色
-
-
+	Oracle 用户，角色(权限的集合，具有相同权限的用户归纳为某种角色)，权限
+		权限赋值给角色，角色赋值给用户，也可以直接把权限赋值给用户
+		权限类别：Object对象级，System系统级，Role角色级
+		权限可以授予给用户，特殊用户，或角色，授予权限给特殊用户（public） 每个用户都享有的权限
+		Oracle角色放在dba_roles表中，某角色包含的系统权限放在dba_sys_privs， 对象权限dba_tab_privs
+		系统权限：系统规定用户使用数据库的权限（系统权限对用户而言）
+		对象权限：某种权限用户对其他用户的表或视图的存取权限（针对表和视图）
+		系统权限分类：
+			DBA: 拥有全部特权，是系统最高权限，只有DBA才可以创建数据库结构。
+			RESOURCE:拥有Resource权限的用户只可以创建实体，不可以创建数据库结构。
+			CONNECT:拥有Connect权限的用户只可以登录Oracle，不可以创建实体，不可以创建数据库结构。
+			授权
+				grant connect, resource, dba to 用户名， ；
+### 删除指定用户下的所有数据
+	conn / as sysdba
+	drop user 'username' cascade
+	create user 'username' identified by password default tablespace 'tablespace';
+	conn user/pwd
 
 
 ### 创建表空间和用户后，通过conn ymfront/ymfront登录报错
@@ -62,6 +93,13 @@ create tablespace YMFRONT datafile '/data0/oradata/YUMAO/YMFRONT.dbf' size 512M 
 
 ### 配置Tns
 
+### oracle数据库迁移
+	1.使用Oracle exp，imp
+		从数据库导出数据
+			exp user/pwd@ip:port/servername file='filepaht'
+		向目标数据库导入数据：
+			imp user/pwd@ip:port/servername file='filepaht' full=y;
+	2.通过Navicat进行数据库迁移
 
 ### 给用户分配操作procedure的权限 
 	grant execute on SYS.DBMS_AQADM to ymfront with grant option;
@@ -148,3 +186,7 @@ where ftfbi.securityid = ftfd.securityid
 		创建和远程数据库中同名数据表
 ### 在PL/SQL development中好使的SQL语句在Java的mybatis中包ora-00911的错误
 	SQL语句最后的一个分号，删除
+
+	SELECT tcga.CUST_NO, COUNT(tcga.FUND_CODE)
+FROM T_CUST_GM_ASSET tcga
+GROUP BY tcga.CUST_NO
