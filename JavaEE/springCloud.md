@@ -23,3 +23,16 @@
 ### 服务发现机制
 	peer（对等体）Eureka Client会缓存服务注册表中的信息，无需每次都请求Eureka Server,降低压力，Eureka宕机仍可保证消费者可以使用缓存找到服务提供者完成调用
 	综上，通过心跳检查，客户端缓存，可以提高系统灵活性，可伸缩性，可用性
+### 引入Fegin（声明式REST客户端）
+	消费端：
+		引入依赖
+			<dependency>
+		        <groupId>org.springframework.cloud</groupId>
+		        <artifactId>spring-cloud-starter-openfeign</artifactId>
+		    </dependency>
+	    开启服务：
+	    	@EnableFeignClients
+	    引入调用接口：
+	    	@FeignClient( name = "服务名称", fallback = FinchinaInterface.FinchinaFailBack.class )
+		note:
+			如果引入微服务部署：docker + swarm，此时生产端需要配置IP地址在自定义网络中，如果ribbon的服务地址列表中的地址限制为ingress网络的，此时消费端调用生产端会出现超时问
