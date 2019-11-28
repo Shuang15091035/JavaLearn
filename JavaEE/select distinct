@@ -1,0 +1,39 @@
+select distinct
+from
+	join on
+where
+group by 
+having
+
+
+order by
+limit
+
+
+
+select top 50 percent * 
+from person
+SQL 通配符
+like 指定模式匹配
+'%g' ：表示匹配以g结尾的内容
+
+- ：仅代替一个字符
+[charlist]:字符列表中的任何一个单字符
+[!charlist] 或者 [!charlist] 不在字符列中的任何单一字符
+where column_name between value1 and value2
+
+
+as :alias
+
+
+Join: 
+INNER join <===> Join：表示两张表中都有数据时才会显示
+left join： 表示左表中存在全部数据，右表中没有的显示null
+right join：表示右表中存在全部数据，左表中
+full join： 任意一个表中有数据就会显示结果
+
+Natural join: 对两张表中字段名和数据类型都相同的字段进行等值连接，并返回符合条件的结果
+ 	Note：两个表同名列不超过1个
+ 	join ... using 用于两表中有同名字段但类型不同，或者使用多个同名字段中的某一个做等值连接join..on..:最为灵活
+
+select INTO

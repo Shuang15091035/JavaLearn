@@ -71,3 +71,42 @@ sudo docker stack rm eureka
 sudo vi eureka.yml
 
 sudo docker stack deploy -c gmservice.yml ymfront
+
+
+#### docker与gosu（提升用户权限）
+https://cloud.tencent.com/developer/information/linux%20gosu
+docker与gosu
+https://cloud.tencent.com/developer/information/linux%20gosu
+
+
+RUN groupadd -r ymfront && useradd -r -g ymfront ymfront
+
+
+exec gosu ymfront "$0" "$@"  
+
+
+ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+redis        1     0  0 Aug13 pts/0    00:08:11 redis-server *:6379
+root        35     0  0 08:33 pts/1    00:00:00 bash
+root       378    35  0 09:13 pts/1    00:00:00 ps -ef
+上面的结果展示了两个关键信息：
+ 第一，redis服务是redis账号启动的，并非root；
+ 第二，redis服务的PID等于1，这很重要，宿主机执行docker stop命令时，该进程可以收到SIGTERM信号量，于是redis应用可以做一些退出前的准备工作，例如保存变量、退出循环等，也就是优雅停机(Gracefully Stopping)；
+
+现在我们已经证实了redis服务并非root账号启动，而且该服务进程在容器内还是一号进程，但是我们在Dockerfile和docker-entrypoint.sh脚本中都没有发现切换到redis账号的命令，也没有sudo和su，这是怎么回事呢？
+
+exec gosu redis "$0" "$@"
+假设启动容器的命令是docker run --name myredis -idt redis redis-server /usr/local/etc/redis/redis.conf；
+容器启动后会执行docker-entrypoint.sh脚本，此时的账号是root；
+当前账号是root，因此会执行上图红框中的逻辑；
+红框中的$0表示当前脚本的名称,即docker-entrypoint.sh；
+红框中的$@表示外部传入的所有参数，即redis-server /usr/local/etc/redis/redis.conf；
+gosu redis “$0” “@”，表示以redis账号的身份执行以下命令
+
+
+### docker rabbitmq
+
+docker run -itd --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+
+

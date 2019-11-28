@@ -214,3 +214,60 @@ tnsnames.ora:配置客户端到服务器端的连接服务，
 ### Linux环境下【Oracle】进入sqlplus 删除键backspace时出现^H
   当oracle进入sqlplus后，输入命令时候出现错误，我们按平时的习惯使用backspace键删除错误信息，此时会出现^H
   解决办法：进入sqlplus之前，使用stty erase '^H'命令后，再次进入sqlplus即可
+
+SQL使用
+创建表
+create table table_name (
+ name varchar2(20);
+ age number(3),
+ height number(5,2),
+ sex char(1)
+);
+
+DML: 操作表中的数据（select,update,insert,delete）
+DDL：创建/修改表的结构，数据类型，表间的链接/约束(alter,create,drop)
+DCL： 设置更改用户或角色权限的语句，包括（grant，deny，）
+
+创建索引
+create index/unique index/primary key TCF_fee on T_COMMISION_FEE(fundtype);
+alter table T_COMMISION_FEE add index TCF_fee (fundtype)
+
+删除索引
+drop index TCF_fee on table T_COMMISION_FEE
+alter table T_COMMISION_FEE drop index TCF_fee
+
+修改索引
+alter T_COMMISION_FEE add index  TCF_fee on 
+查看索引
+show index from TCF_fee \g
+
+## oracle 字段值拼接
+使用  listagg() WITHIN GROUP ()  将多行合并成一行(比较常用)
+SELECT
+  T .DEPTNO,
+  listagg (T .ENAME, ',') WITHIN GROUP (ORDER BY T .ENAME) names
+FROM
+  SCOTT.EMP T
+WHERE
+  T .DEPTNO = '20'
+GROUP BY
+  T .DEPTNO
+效果：
+  deptno names
+  20      adams,ford,jones,scott,smith
+
+3. 使用 listagg() within GROUP () over  将多行记录在一行显示(没有遇到过这种使用场景)
+SELECT
+  T .DEPTNO,
+  listagg (T .ENAME, ',') WITHIN GROUP (ORDER BY T .ENAME)  over(PARTITION BY T .DEPTNO)
+FROM
+  SCOTT.EMP T
+WHERE
+  T .DEPTNO = '20'
+效果：
+  deptno names
+  20      adams,ford,jones,scott,smith
+  20      adams,ford,jones,scott,smith
+  20      adams,ford,jones,scott,smith
+  20      adams,ford,jones,scott,smith
+  20      adams,ford,jones,scott,smith

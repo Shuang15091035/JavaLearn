@@ -1,8 +1,15 @@
+IDE：PLSQL 安装下载地址：
+	https://www.allroundautomations.com/registered/plsqldev.html
+IDE：PLSQL Developer 13注册码
+	product code：4vkjwhfeh3ufnqnmpr9brvcuyujrx3n3le
+	serial Number： 226959
+	password：xs374ca
+
 ### 创建临时表空间（未使用）
 create temporary tablespace NOTIFYDB_TEMP tempfile '${ORACLE_HOME}\oradata\NOTIFYDB_TEMP.bdf' size 100m reuse autoextend on next 20m maxsize unlimited; 
 
 ### 创建表空间
-create tablespace YMFRONT datafile '/data0/oradata/YUMAO/YMFRONT.dbf' size 512M reuse autoextend on next 40M maxsize unlimited default storage(initial 128k next 128k minextents 2 maxextents unlimited);
+create tablespace YMFRONT datafile '/u01/app/oracle/oradata/XE/YMFRONT.dbf' size 512M reuse autoextend on next 40M maxsize unlimited default storage(initial 128k next 128k minextents 2 maxextents unlimited);
 ### 查看数据文件位置
 	select name from v$datafile
 ### 查看所有的表空间
@@ -186,6 +193,10 @@ where ftfbi.securityid = ftfd.securityid
 		创建和远程数据库中同名数据表
 ### 在PL/SQL development中好使的SQL语句在Java的mybatis中包ora-00911的错误
 	SQL语句最后的一个分号，删除
+### 关于本地不安装Oracle，使用PLSQL远程连接Oracle数据库
+	https://blog.csdn.net/qq_21875331/article/details/82890183
+	note：需要安装vc_redis.x64.exe附件
+
 
 	SELECT tcga.CUST_NO, COUNT(tcga.FUND_CODE)
 FROM T_CUST_GM_ASSET tcga

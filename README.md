@@ -37,3 +37,6 @@ JavaXML和Java类提示功能
 
 
 PxCook - 最高效易用的自动标注工具,设计研发协作利器
+
+JavaSE 开发教程
+	https://docs.oracle.com/javase/tutorial/index.html

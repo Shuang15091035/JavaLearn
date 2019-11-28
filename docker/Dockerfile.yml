@@ -1,3 +1,42 @@
+###center
+  version: '3'
+     2  services:
+     3    ymfront-center1:
+     4      image: shuangluck/ymfront-center:prod
+     5      ports:
+     6        - "8760:8760"
+     7      networks:
+     8        overlay-ymfront:
+     9          aliases:
+    10            - eureka
+    11      deploy:
+    12        replicas: 1
+    13        placement:
+    14          constraints: [node.labels.role==center22]
+    15      environment:
+    16        eureka.client.serviceUrl.defaultZone: http://ymfront-center2:8760/eureka/
+    17        eureka.instance.hostname: ymfront-center1
+    18    ymfront-center2:
+    19      image: shuangluck/ymfront-center:prod
+    20      ports:
+    21        - "8761:8760"
+    22      networks:
+    23        overlay-ymfront:
+    24          aliases:
+    25            - eureka
+    26      deploy:
+    27        replicas: 1
+    28        placement:
+    29          constraints: [node.labels.role==center10]
+    30      environment:
+    31        eureka.client.serviceUrl.defaultZone: http://ymfront-center1:8760/eureka/
+    32        eureka.instance.hostname: ymfront-center2
+    33  networks:
+    34    overlay-ymfront:
+    35      external:
+    36        name: overlay-ymfront
+
+##service
 version: '3'
 services:
   ymfront-center:
@@ -67,3 +106,15 @@ services:
 networks:
   net-overlay:
     driver: overlay
+
+指定自定义网络类型：
+network:
+  hostnet:
+    external: true
+    name: host  
+指定端口：
+  ports:
+  -target: 80
+    published: 8080
+    protocol: tcp
+    mode: host

@@ -241,4 +241,38 @@ Aop注解：
   传播行为：
 整合web：
     
-    
+### AOP + EL 动态获取传递参数值
+    > 自定义注解
+        @Retention(RetentionPolicy.RUNTIME)
+        @Target({ElementType.METHOD})
+        public @interface DoSomethingAnno {
+
+            String key() default "";
+            String cacheName() default "";
+            boolean needLog() default false;
+
+        }
+    > 注解使用
+        @DoSomethingAnno(key = "#key",cacheName = "hello",needLog = true)
+        public String hello(@RequestParam(name = "key") String key){}
+    > 注解解释
+        @Around("@annotation(dst)")
+    public void methodParamInterceptor(ProceedingJoinPoint joinPoint, DoSomethingAnno dst) {
+        String key = getRealKey(dst.key(),joinPoint);
+        String cacheName = dst.cacheName();
+        Boolean needLog = dst.needLog();
+    }
+    public String getRealKey(String key, ProceedingJoinPoint joinPoint) {
+        DefaultParameterNameDiscoverer nameDiscoverer = new DefaultParameterNameDiscoverer();
+        SpelExpressionParser parser = new SpelExpressionParser();
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        String[] paramNames = nameDiscoverer.getParameterNames(methodSignature.getMethod());
+        Expression expression = parser.parseExpression(key);
+        EvaluationContext context = new StandardEvaluationContext();
+        Object[] args = joinPoint.getArgs();
+        for(int i = 0 ; i < args.length ; i++) {
+            context.setVariable(paramNames[i], args[i]);
+        }
+        return expression.getValue(context).toString();
+    }
+

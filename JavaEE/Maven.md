@@ -64,12 +64,10 @@ dependencjar包写法可参考：
                 <includes>
                     <include>*</include>
                 </includes>
-                <filtering>true</filtering>
             </resource>
             <resource>
                 <targetPath>${project.build.directory}/classes</targetPath>
                 <directory>${project.basedir}/src/main/resources/</directory>
-                <filtering>true</filtering>
             </resource>
         </resources>
     </build>
