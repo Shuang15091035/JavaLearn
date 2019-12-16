@@ -22,3 +22,7 @@ Finder->前往 --> 连接服务器--> ftp://IP:port 或 ftp://username:password@
 ftp服务器搭建简易方式：
 Windows：
 	"简单FTP Server"应用程序安装
+
+### Mac下使用命令行工具（eg:Git工具）
+	1.检查是否已经安装xcode-select -v （安装：xcode-select --install）
+	2.配置路径 sudo xcode-select -s /Library/Developer/CommandLineTools

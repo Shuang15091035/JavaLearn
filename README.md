@@ -40,3 +40,7 @@ PxCook - 最高效易用的自动标注工具,设计研发协作利器
 
 JavaSE 开发教程
 	https://docs.oracle.com/javase/tutorial/index.html
+### PC同时配置内外网
+	为保持网络的可用性：配置路由数据为永久有效 （目的地之 子网掩码 下一跳地址）
+		route add -p 192.168.0.0 mask 255.255.0.0 192.168.1.1
+		route add -p 10.8.0.0 mask 255.255.0.0 10.8.0.200

@@ -55,6 +55,8 @@ MacOS RabbitMq使用
  		brew install rabbitmq
  	2.通过官方下载安装包（https://www.rabbitmq.com）
 
-
+问题汇总：
+	###消息丢失与重复消费问题
+		消息丢失：通过开启生产者
 
 
