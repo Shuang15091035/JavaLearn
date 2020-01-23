@@ -10,6 +10,8 @@ TLS与SSL对于不是专业搞安全的开发人员来讲，可以认为是差�
 
 KEY 通常指私钥。
 
+CA Certificate Authority (证书颁发机构)
+
 CSR 是Certificate Signing Request的缩写，即证书签名请求，这不是证书，可以简单理解成公钥，生成证书时要把这个提交给权威的证书颁发机构。
 
 CRT 即 certificate的缩写，即证书。
@@ -31,12 +33,11 @@ OpenSSL 相当于SSL的一个实现，如果把SSL规范看成OO中的接口，�
 	三方机构购买
 	免费申请（Let`s Encrypt）
 	自签证书
-创建秘钥文件：
-	openssl genrsa -out shuang.ca.key 4096
+创建2048位的私钥文件：
+	openssl genrsa -out shuang.ca.key 2048
 创建csr证书：
 	openssl req -new -key shuang.ca.key -out shuang.ca.csr
-##去除秘钥密码：
-	cp shuang.key shuang.key.bak
-	openssl rsa -in shuang.ca.key.bak -out shuang.ca.key
+##根据私钥生成公钥：
+	openssl rsa -in shuang.ca.key -out shuang.ca.key
 生成crt证书：
 	openssl x509 -req -days 3650 -in shuang.ca.csr -signkey shuang.ca.key -out shuang.ca.crt

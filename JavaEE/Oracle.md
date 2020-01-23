@@ -5,6 +5,23 @@ SELECT SID,SERIAL#,PADDR FROM V$SESSION WHERE SID= 25
 
 alter system kill session '25,17423' immediate; 
 
+
+###  关于ORACLE连接报ORA-12514:TNS 监听程序当前无法识别连接描述符中请求的服务
+   通过tnsping orcl 检测实例连接正常
+   通过lsnrctl status 检测Oracle状态不存在 可判断是oracle实例启动失败问题,可通过重启oracle服务实例，是不可行
+   可通过以下方式解决：
+    sqlplus /nolog
+    conn / as sysdba
+    startup
+      出现以下错误：表示oracle没有启动
+        发现ora-00119【ora-00119 invalid specification for system parameter】
+         ora-00132【syntax error or unresolved network name 'LISTENER_ORCL'】：
+    Oracle11g：
+      1.查找pfile文件（用来启动oracle服务的）：D:\app\admin\admin\orcl\pfile\init.ora.112520191177 
+      2.替换local_listener=LISTENER_ORCL为换成你tnsnames.ora中的ADDRESS_LIST更换后local_listener="(ADDRESS = (PROTOCOL = TCP)(HOST = 10.8.0.43)(PORT = 1521))"
+      3.startup pfile='D:\app\admin\admin\orcl\pfile\init.ora.112520191177'
+      4.重新登录Oracle conn system/passwd@orcl 成功
+
 Oracle支持的数据隔离级别：read commited(读已提交)，read serialization(串行化)
 数据库：是一个物理概念(存储在硬盘上)，数据库实例：数据库文件读取到内存中 关系至少是一对一，可为一对多
 ###  -------------SQL命令-------------

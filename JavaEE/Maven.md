@@ -1,3 +1,5 @@
+### Maven 私服Nexus 搭建配置
+    https://www.cnblogs.com/hujunzheng/p/9807646.html
 ### Maven生命周期
 + Maven 生命周期:(生命周期是抽象的，实际行为由插件完成)(项目的清理，初始化，编译，测试，打包，集成测试，验证，部署，站点生成)
 package: maven-jar-plugin

@@ -25,4 +25,5 @@ linux redis 安装：
 		缓存数据过期时间设置为随机值，
 		混村数据库分布式部署，热点数据均匀分布在不同的缓存数据库中，
 		设置热点数据永不过期
-		
+redis配置文件bind正确理解
+	https://blog.csdn.net/cw_hello1/article/details/83444013
