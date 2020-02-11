@@ -45,3 +45,14 @@ JavaSE 开发教程
 		route add -p 192.168.0.0 mask 255.255.0.0 192.168.1.1
 		route add -p 10.8.0.0 mask 255.255.0.0 10.8.0.200
 ### istio为已部署服务建立网络，该网络具有负载均衡，服务间认证，监控等功能
+
+
+### 数据结构可视化网站
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+https://visualgo.net/zh
+
+### 分布式Session解决方案
+	方案一：客户端存储
+	方案二：session复制
+	方案三：session绑定
+	方案四：基于Redis存储session方案（RedisCluster）（基于sentinel的主从复制）
