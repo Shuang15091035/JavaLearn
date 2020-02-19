@@ -48,3 +48,28 @@ RabbitMq
         } catch (Exception e) {
             System.out.println("写文件错误");
         }
+### Java 大小端问题
+    public static void main(String[] args) throws IOException {
+
+        /**
+        * 代码默认大小端实现
+        */
+        ByteBuffer buf =ByteBuffer.allocate(6);
+        System.out.println("Default java endian: "+buf.order().toString());
+
+        /**
+        * 大小端显示结果
+        */
+        buf.order(ByteOrder.LITTLE_ENDIAN);
+        System.out.println("Now: "+buf.order().toString());
+        buf.putShort((short)1);
+        buf.putShort((short)2);
+        buf.putShort((short)3);
+        buf.flip();
+        for(int i=0;i<buf.limit();i++)
+            System.out.println(buf.get()&0xFF);
+        /**
+        *   本机大小端方式
+        */
+        System.out.println("My PC: "+ByteOrder.nativeOrder().toString());
+    }
