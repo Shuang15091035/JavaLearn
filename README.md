@@ -1,5 +1,5 @@
 经验教训：
-1.没有人无所不知(开发人员不需要知道一切，需要知道解决问题的能力)
+1.没有人无所不知(开发人员不需要知道一切，需要具备解决问题的能力)
 	提高解决问题的能力
 
 	提高团队合作和沟通技巧
@@ -56,3 +56,17 @@ https://visualgo.net/zh
 	方案二：session复制
 	方案三：session绑定
 	方案四：基于Redis存储session方案（RedisCluster）（基于sentinel的主从复制）
+
+### 通过OAuth2实现同一用户不同平台多token的管理，解决某一个平台客户退出的登录，而其他平台账号已登录账号仍保持在线？
+	通过用户名+token+sessionid的方式实现多端同时登陆
+	移动端OAuth2实现：	
+	移动端获取到code，发送到后台，
+		后台通过存储的appid+appsecret+code 获取到token
+		后台通过获取的token获取客户信息
+		返回客户信息到移动端
+	移动端获取到客户信息，实现客户登录成功
+
+### 常见的内网穿透工具
+	https://blog.csdn.net/jake_tian/article/details/99962157
+		基本原理都是通过natp原理
+	NGRok

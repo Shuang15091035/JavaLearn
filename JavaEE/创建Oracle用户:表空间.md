@@ -5,6 +5,16 @@ IDE：PLSQL Developer 13注册码
 	serial Number： 226959
 	password：xs374ca
 
+Oracle ：一般一个数据库对应一个实例
+	数据库：指的是固定的，基于磁盘的数据文件，控制文件，日志文件，参数文件和归档日志文件等。
+	实例：非固定的，基于内存的基本进程与内存结构，当服务关闭，实例就不存在了；
+DDL(表)
+	create, drop,alter,
+DML(记录)
+	select ,insert ,update,delete
+DCL（用户）
+	grant，revoke，
+
 ### 创建临时表空间（未使用）
 create temporary tablespace NOTIFYDB_TEMP tempfile '${ORACLE_HOME}\oradata\NOTIFYDB_TEMP.bdf' size 100m reuse autoextend on next 20m maxsize unlimited; 
 

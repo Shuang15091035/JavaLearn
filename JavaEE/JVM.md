@@ -14,4 +14,57 @@ JVM对象分配原则：
 	长期存活的对象将进入老年代；
 	动态年龄判断；
 	空间分配担保；
+JVM调优工具
+	jps：查看Java程序进程状态
+		jps -l 
+	jstat：查看Java堆空间统计信息
+		jstat -options
+		jstat -gc <pid>
+			S0C：第一个Survivor区域的容量（KB）
+			S1C：第二个Survivor区域的容量（KB）
+			S0U：第一个Survivor区域的使用容量（KB）
+			S1U：第二个Survivor区域的使用容量（KB）
+			EC：Eden区域容量（KB)
+			EU：Eden区域使用容量（KB)
+			OC：Old区容量（KB）
+			OU：Old区使用容量（KB）
+			MC：Method区容量（KB）
+			MU：Method区使用容量（KB）
+			CCSC：压缩类空间大小
+			CCSU：压缩类使用空间
+			YGC：年轻代回收次数
+			YGCT：年轻代回收时间
+			FGC：老年代回收次数
+			FGCT：老年代回收时间
+			GCT：垃圾回收总时间
+	jmap:查看内存使用情况，以及内存中对象数量和大小				(出现内存溢出时可通过此方法进行查看)
+		jmap -dump:format=b,file=/tmp/dump.dat
+	jhat:对dump文件进行分析
+	MAT工具对dump文件分析 
+		内存溢出调试：
+			-Xms8M -Xmx8M -XX:+HeapDumpOnOutOfMemoryError
+	jstack:(查看线程状况) （可用于分析线程状态）
+
+可视化日志分析工具：GCEasy
+	-XX:+PrintGC
+	-XX:+PrintGCDetails
+	-XX:PrintGCTimeStamps
+	-XX:+PrintGCDateStamps
+	-XX:+PrintHeapAtGC
+	-xloggc:../log/gc.log
+
+
+Tomcate优化：
+	tomcat参数调整：
+		1.禁用AJP服务c
+		2.设置线程池
+		3.运行模式，使用NIO 修改连接器Protocol
+	调整JVM参数：
+		使用何种垃圾回收器，堆内存设置；
+		通过GCeasy分析GC日志，看看是否是堆内存设置有问题、
+程序优化：
+	JVM字节码  javap -v  xx.class >test.txt
+	官方字节码地址：https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html
+
+
 	

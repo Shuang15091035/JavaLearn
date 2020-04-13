@@ -10,13 +10,15 @@ alter system kill session '25,17423' immediate;
    通过tnsping orcl 检测实例连接正常
    通过lsnrctl status 检测Oracle状态不存在 可判断是oracle实例启动失败问题,可通过重启oracle服务实例，是不可行
    可通过以下方式解决：
-    sqlplus /nolog
-    conn / as sysdba
+    (sqlplus /nolog
+    conn / as sysdba) sqlplus / as sysdba
+    select status from v$instance; //查看实例是否开启
+    select status from v$instance; //查询系统参数
     startup
       出现以下错误：表示oracle没有启动
         发现ora-00119【ora-00119 invalid specification for system parameter】
          ora-00132【syntax error or unresolved network name 'LISTENER_ORCL'】：
-    Oracle11g：
+    Oracle11g：（实例未启动，通过以下方法）
       1.查找pfile文件（用来启动oracle服务的）：D:\app\admin\admin\orcl\pfile\init.ora.112520191177 
       2.替换local_listener=LISTENER_ORCL为换成你tnsnames.ora中的ADDRESS_LIST更换后local_listener="(ADDRESS = (PROTOCOL = TCP)(HOST = 10.8.0.43)(PORT = 1521))"
       3.startup pfile='D:\app\admin\admin\orcl\pfile\init.ora.112520191177'
