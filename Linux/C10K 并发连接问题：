@@ -1,0 +1,20 @@
+C10K 并发连接问题：
+https://blog.csdn.net/chenrui310/article/details/101685827
+
+FreeBSD: kqueue
+Linux: epoll
+Windows: IOCP
+Solaris: /dev/poll
+
+
+
+Rredis读写分离：
+	通过Lettuce提供ReadFrom.SLAVE_PREFERRED可实现
+
+Lettuce运行过程中：
+	Starting without optional epoll library
+	or
+	Starting without optional kqueue library
+	Mac系统引入 brew install libevent 
+		libevent:支持Linux, BSD,MacOSX,Solaris,Windows
+	启动提示：Starting with kqueue library

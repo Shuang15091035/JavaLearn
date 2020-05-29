@@ -70,3 +70,27 @@ https://visualgo.net/zh
 	https://blog.csdn.net/jake_tian/article/details/99962157
 		基本原理都是通过natp原理
 	NGRok
+### 国内包无法下载问题
+	解决方法：设置代理(代理地址这里指向的是蓝灯开启的代理地址)
+		export http_proxy='http:127.0.0.1:52015'
+		export https_proxy=$http_proxy
+	解决案例： go get -v github.com/golang/protobuf/protoc-gen-go
+		错误：unrecognized import path "google.golang.org/protobuf/types/descriptorpb": https fetch: Get "https://google.golang.org/protobuf/types/descriptorpb?go-get=1": dial tcp 216.239.37.1:443: i/o timeout
+### 编程语言的实现，从AST(抽象语法树)开始
+
+### Java多线程并发编程艺术
+	happen-before 原则：
+	1).程序顺序规则: 一个线程中的每个操作，happens-before于该线程中的任意后续操作。
+	2).监视器锁:对一个锁的解锁，happens-before于随后对这个锁的加锁
+	3).volatile变量规则：对一个volatile域的写，happens-before于任意后续对这个volatile域的读
+	4).传递性：如果A happens-before B，且 B happens-before C，那么A happens-before C
+	注意：两个操作之间具有happens-before关系，并不意味着前一个操作必须要在后一个操作之前执行！happens-before仅仅要求前一个操作（执行的结果）对后一个操作可见，且前一个操作按顺序排在第二个操作之前（the first is visible to and ordered before the second)
+	as-if-serial:
+		不管怎么重排序，程序的执行结果不能被改变
+	顺序一致性内存模型：
+		1).一个线程所有操作必须按照程序顺序来执行
+		2).（不管是否同步)，所有线程都只能看到一个单一的顺序.
+		在顺序一致性内存模型中，每个操作必须原子执行且立刻对所有线程所见。
+C10K问题
+	The C10K problem
+		http://www.kegel.com/c10k.html

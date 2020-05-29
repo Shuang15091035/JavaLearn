@@ -23,3 +23,26 @@ Redis分布式锁：
 
 	Redisson:主从架构，Master挂掉，从节点没有同步到加锁的线程，导致锁失效；（Zookeeper可以解决）（通过半数以上的节点加锁成功，才返回加锁成功）
 	RedLock(redis中解决方案，需要对等的节点)
+
+### Redis 读写分离Jmeter测试，仅仅是数据读取，TPS 值高于做读写分离 TPS，
+另外通过配置Lettuce的Pool,配置之后影响仅仅做数据读取
+同时读写情况下，适合
+
+### Rredis读写分离：（spring-cloud-starter-data-redis）
+	通过Lettuce提供ReadFrom.SLAVE_PREFERRED可实现
+
+Lettuce运行过程中：
+	Starting without optional epoll library
+	or
+	Starting without optional kqueue library
+	Mac系统引入 brew install libevent 
+		libevent:支持Linux, BSD,MacOSX,Solaris,Windows
+	启动提示：Starting with kqueue library
+
+C10K 并发连接问题：
+https://blog.csdn.net/chenrui310/article/details/101685827
+
+FreeBSD: kqueue
+Linux: epoll
+Windows: IOCP
+Solaris: /dev/poll

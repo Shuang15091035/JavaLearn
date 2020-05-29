@@ -1,3 +1,9 @@
+### 版本选择(SPringCloud)
+	GA general availability ：通用版本，功能齐全
+	RC：Release candidate :发布候选版本。功能较为齐全，相对稳定，问题应该相对少和次要，值得报告，bug将会修复。
+	M: milestone build:里程碑版本。功能还不全，项目完成了一个计划，但是还是可能有问题的
+	SRX: service release: 服务发布版本，
+	
 ### spring security加入
 	application.yml文件
 	security.basic.enabled=true
