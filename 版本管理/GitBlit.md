@@ -47,3 +47,10 @@ Windows搭建Gitblit服务
 	添加文件到$gitblit_home/data/groovy目录下
 	gitblit仓库中通过 ->编辑->接收->post-receive脚本->选择test.groovy文件
 		注：可实现通过git push操作，动态更新Git Config项目内容
+
+> gitblit无法安装Windows服务或启动失败问题
+	1.首先以管理员身份运行installService.cmd，window服务中可以看到gitblit服务
+	2.以管理员身份运行gitblitw.exe，修改JVM指定Java\jre7\bin\client\jvm.dll文件
+
+> 删除window服务
+	sc delete "服务名称"
