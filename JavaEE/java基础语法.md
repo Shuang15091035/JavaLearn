@@ -73,3 +73,11 @@ RabbitMq
         */
         System.out.println("My PC: "+ByteOrder.nativeOrder().toString());
     }
+
+ ### lambda表达式
+ 	对象:: 实例方法名
+ 	类名:: 静态方法名
+ 	类名:: 实例方法名
+ 		第一点：接口方法的参数比引用方法的参数多一个
+   		第二点：接口方法的第一个参数恰巧是调用引用方法的对象（其引用方法所在类或其父类的实例）
+   	类名::new 引用构造方法

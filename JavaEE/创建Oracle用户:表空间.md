@@ -211,3 +211,22 @@ where ftfbi.securityid = ftfd.securityid
 	SELECT tcga.CUST_NO, COUNT(tcga.FUND_CODE)
 FROM T_CUST_GM_ASSET tcga
 GROUP BY tcga.CUST_NO
+
+
+### 创建只读用户
+1.创建用户;
+	create user jpcf identified by jpcf2233;
+2.分配基本权限
+	grant connect to jpcf ;
+ 	grant create synonym to jpcf;
+ 	grant create session to jpcf;
+3.分配查询权限
+	select 'grant select on '||owner||'.'||object_name||' to jpcf;'
+ 	from dba_objects
+ 	where owner in ('YMFRONT')
+ 		and object_type='TABLE';
+4.创建同义词
+	SELECT 'create or replace SYNONYM  jpcf.' || object_name|| ' FOR ' || owner || '.' || object_name|| ';'  from dba_objects 
+ 	where owner in ('YMFRONT')
+ 	and object_type='TABLE';
+5.表数据查询
