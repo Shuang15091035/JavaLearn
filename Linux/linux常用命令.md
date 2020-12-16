@@ -24,3 +24,8 @@ man :
 
 
  lsof 展示已打开的文件描述符
+
+
+ ### Mac 防止文件误删
+ alias rm="trash"
+
